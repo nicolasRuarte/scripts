@@ -3,7 +3,7 @@ cd ~/colegio/7I/olimpiadas-fvhn/backend;
 gnome-terminal --tab --title="Btop" -- sh -c 'insomnia & btop; bash';
 gnome-terminal --tab --title="Trashcoding" -- sh -c 'nvim .; bash';
 gnome-terminal --tab --title="Logging" -- sh -c 'echo "run npm run dev"; bash';
-brave-browser "https://trello.com" &
+brave-browser "https://trello.com/b/9Htp2n8j/olimpiadas-cassaffousth" &
 youtube-music &
 #dbeaver &
 sleep 10

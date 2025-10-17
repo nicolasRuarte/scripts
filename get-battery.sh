@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-battery_percent="$(acpi | grep -Eo "[0-9][0-9]?%")"
+battery_percent="$(acpi | grep -Eo "[0-9][0-9]?[0-9]?%")"
 
 echo "Batería: $battery_percent"
 

@@ -14,6 +14,6 @@ while read line; do
     if [ $COUNTER -eq 2 ]; then
         USED_RAM="$line"
     fi
-done < <(free -h | grep -Eo "[0-9][0-9]?,?[0-9]?")
+done < <(free -h | grep -Eo "[0-9][0-9]?,?[0-9]?[0-9]?[0-9]?")
 
 echo "$TOTAL_RAM GB/$USED_RAM GB"

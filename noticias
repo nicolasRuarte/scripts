@@ -1,0 +1,7 @@
+i3-msg "workspace 1; ~/binaries/zen/zen-bin 'https://www.pagina12.com.ar/'"
+sleep 3
+
+i3-msg "workspace 1; ~/binaries/zen/zen-bin --new-tab 'https://www.infobae.com/'"
+sleep 1
+
+i3-msg "workspace 1; ~/binaries/zen/zen-bin --new-tab 'https://app.daily.dev/'"

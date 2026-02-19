@@ -3,7 +3,7 @@ battery_percent="$(acpi | grep -Eo '[0-9][0-9]?[0-9]?%')"
 battery_state="$(acpi | grep -Eo 'Charging')"
 
 if [ $battery_state = "Charging" ]; then
-    echo "Batería: $battery_percent"
+    echo "⚡ Batería: $battery_percent"
     exit 0
 fi
 

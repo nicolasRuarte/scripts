@@ -31,4 +31,3 @@ i3-msg "workspace 4; exec --no-startup-id ~/binaries/youtube-music-3.11.0/youtub
 sleep 5
 
 cd /home/nico/colegio/facu-1ro
-

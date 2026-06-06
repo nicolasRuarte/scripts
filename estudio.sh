@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 materia=$1
 
 echo $materia

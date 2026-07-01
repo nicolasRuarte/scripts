@@ -33,9 +33,6 @@ if [ "$materia" = "discreta" ]; then
     gnome-terminal  -- bash -c "cd /home/nico/colegio/facu-1ro/discreta/; nvim .; exec bash"
 fi
 
-i3-msg "workspace 1; exec --no-startup-id ~/binaries/zen/zen-bin --new-tab 'https://whatsapp.com'"
-sleep 20
-
 i3-msg "workspace 2; exec --no-startup-id /usr/bin/obsidian"
 sleep 5
 

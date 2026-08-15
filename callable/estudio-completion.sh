@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-complete -W "algebra algos-1 analisis discreta intro" . estudio
+complete -W "algebra algos-1 analisis analisis-2 discreta intro" . estudio

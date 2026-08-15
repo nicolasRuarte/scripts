@@ -2,33 +2,47 @@
 
 MATERIA=$1
 
-
 if [ "$MATERIA" = "" ]; then
     echo "Por favor, especifica una materia"
     exit 0
 fi
 
+SESSION_NAME="estudio"
+
+if tmux has-session -t $SESSION_NAME 2>/dev/null; then
+    tmux attach -t $SESSION_NAME
+    exit 0
+fi
+
+tmux new -d -s $SESSION_NAME
+tmux rename-window -t $SESSION_NAME:1 "estudio"
+
+# Las operaciones de abrir pestañas en el navegador requieren de ya estar en el workspace de estudio con antelación
 if [ "$MATERIA" = "analisis" ]; then
-    z analisis-2; nvim .
+    tmux send-keys -t $SESSION_NAME:1 "z analisis; nvim ." Enter
+fi
+
+if [ "$MATERIA" = "analisis-2" ]; then
+    tmux send-keys -t $SESSION_NAME:1 "z analisis-2; nvim ." Enter
 fi
 
 if [ "$MATERIA" = "discreta" ]; then
-    i3-msg "workspace 1; exec --no-startup-id ~/binaries/zen/zen-bin --new-tab 'https://famaf.aulavirtual.unc.edu.ar/course/view.php?id=661'"
-    sleep 5
-    i3-msg "workspace 1; exec --no-startup-id ~/binaries/zen/zen-bin --new-tab 'https://chatgpt.com/c/69e56bc4-e874-83e9-b902-308e0b0224e5'"
-    sleep 5
-    gnome-terminal  -- bash -c "cd /home/nico/colegio/facu-1ro/discreta/; nvim .; exec bash"
+    tmux send-keys -t $SESSION_NAME:1 "z discr; nvim ." Enter
 fi
 
-if [ $MATERIA = "algebra" ] ; then
-    z algebra; nvim .
+if [ $MATERIA = "algebra" ]; then
+    tmux send-keys -t $SESSION_NAME:1 "z algebra; nvim ." Enter
+    zen-bin --new-tab "file:///home/nico/colegio/facu-1ro/algebra/apunte.pdf"
+    sleep 2
+    zen-bin --new-tab "file:///home/nico/colegio/facu-1ro/algebra/tiraboschi.pdf"
 fi
 
-if [ $MATERIA = "algo-1" ] ; then
-    z algos-1; nvim .
+if [ $MATERIA = "algos-1" ]; then
+    tmux send-keys -t $SESSION_NAME:1 "z algos-1; nvim ." Enter
 fi
 
 i3-msg "workspace 2; exec --no-startup-id /usr/bin/obsidian"
 sleep 5
+zen-bin --new-tab "https://music.youtube.com"
 
 exit

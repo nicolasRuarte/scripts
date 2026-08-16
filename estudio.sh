@@ -32,9 +32,9 @@ fi
 
 if [ $MATERIA = "algebra" ]; then
     tmux send-keys -t $SESSION_NAME:1 "z algebra; nvim ." Enter
-    zen-bin --new-tab "file:///home/nico/colegio/facu-1ro/algebra/apunte.pdf"
+    i3-msg "zen-bin --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/apunte.pdf'"
     sleep 2
-    zen-bin --new-tab "file:///home/nico/colegio/facu-1ro/algebra/tiraboschi.pdf"
+    i3-msg "zen-bin --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/tiraboschi.pdf'"
 fi
 
 if [ $MATERIA = "algos-1" ]; then
@@ -43,6 +43,7 @@ fi
 
 i3-msg "workspace 2; exec --no-startup-id /usr/bin/obsidian"
 sleep 5
-zen-bin --new-tab "https://music.youtube.com"
+i3-msg "workspace 1; zen-bin --new-tab 'https://music.youtube.com'"
+tmux attach -t $SESSION_NAME
 
 exit

@@ -25,6 +25,7 @@ fi
 
 if [ "$MATERIA" = "analisis-2" ]; then
     tmux send-keys -t $SESSION_NAME:1 "z analisis-2; nvim ." Enter
+    i3-msg "workspace 1; exec $BROWSER_PATH ~/colegio/facu-1ro/analisis-2/apunte.pdf"
 fi
 
 if [ "$MATERIA" = "discreta" ]; then
@@ -33,9 +34,9 @@ fi
 
 if [ $MATERIA = "algebra" ]; then
     tmux send-keys -t $SESSION_NAME:1 "z algebra; nvim ." Enter
-    i3-msg "exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/apunte.pdf'"
+    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/tesauri.pdf'"
     sleep 2
-    i3-msg "exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/tiraboschi.pdf'"
+    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/tiraboschi.pdf'"
 fi
 
 if [ $MATERIA = "algos-1" ]; then
@@ -44,7 +45,6 @@ fi
 
 i3-msg "workspace 2; exec --no-startup-id /usr/bin/obsidian"
 sleep 5
-i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'https://music.youtube.com'"
 tmux attach -t $SESSION_NAME
 
 exit

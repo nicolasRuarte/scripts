@@ -34,8 +34,6 @@ fi
 
 if [ $MATERIA = "algebra" ]; then
     tmux send-keys -t $SESSION_NAME:1 "z algebra; nvim ." Enter
-    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/tesauri.pdf'"
-    sleep 2
     i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/tiraboschi.pdf'"
 fi
 

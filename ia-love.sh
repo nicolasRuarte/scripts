@@ -15,6 +15,6 @@ tmux new-window -t $SESSION_NAME -n "server"
 tmux send-keys -t $SESSION_NAME:2 "z ia-love backend; go run ." Enter
 
 tmux new-window -t $SESSION_NAME -n "curl"
-tmux send-keys -t $SESSION_NAME:3 "echo 'Utiliza los comandos curl que quieras'" Enter
+tmux send-keys -t $SESSION_NAME:3 "z ia-love backend; cat curl-commands.txt; echo 'Utiliza los comandos curl que quieras'" Enter
 
 tmux attach -t $SESSION_NAME

@@ -35,10 +35,14 @@ fi
 if [ $MATERIA = "algebra" ]; then
     tmux send-keys -t $SESSION_NAME:1 "z algebra; nvim ." Enter
     i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/tiraboschi.pdf'"
+    sleep 5
 fi
 
 if [ $MATERIA = "algos-1" ]; then
     tmux send-keys -t $SESSION_NAME:1 "z algos-1; nvim ." Enter
+    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab file:://home/nico/colegio/facu-1ro/algos-1/apuntovich.html"
+    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab file:://home/nico/colegio/facu-1ro/algos-1/calculo-programas.pdf"
+    sleep 5
 fi
 
 i3-msg "workspace 2; exec --no-startup-id /usr/bin/obsidian"

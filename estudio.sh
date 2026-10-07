@@ -25,7 +25,7 @@ fi
 
 if [ "$MATERIA" = "analisis-2" ]; then
     tmux send-keys -t $SESSION_NAME:1 "z analisis-2; nvim ." Enter
-    i3-msg "workspace 1; exec $BROWSER_PATH ~/colegio/facu-1ro/analisis-2/apunte.pdf"
+    i3-msg "workspace 1; exec $BROWSER_PATH ~/colegio/facu-1ro/analisis-2/james-stewart-una-variable.pdf"
 fi
 
 if [ "$MATERIA" = "discreta" ]; then
@@ -35,13 +35,17 @@ fi
 if [ $MATERIA = "algebra" ]; then
     tmux send-keys -t $SESSION_NAME:1 "z algebra; nvim ." Enter
     i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/tiraboschi.pdf'"
+    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/tesauri.pdf'"
+    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/kenneth-hoffman.pdf'"
+    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/elon-lages-lima.pdf'"
+    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/howard-anton.pdf'"
     sleep 5
 fi
 
 if [ $MATERIA = "algos-1" ]; then
     tmux send-keys -t $SESSION_NAME:1 "z algos-1; nvim ." Enter
-    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab file:://home/nico/colegio/facu-1ro/algos-1/apuntovich.html"
-    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab file:://home/nico/colegio/facu-1ro/algos-1/calculo-programas.pdf"
+    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab file:///home/nico/colegio/facu-1ro/algos-1/apuntovich.html"
+    i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab file:///home/nico/colegio/facu-1ro/algos-1/calculo-programas.pdf"
     sleep 5
 fi
 

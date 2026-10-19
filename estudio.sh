@@ -26,6 +26,8 @@ fi
 if [ "$MATERIA" = "analisis-2" ]; then
     tmux send-keys -t $SESSION_NAME:1 "z analisis-2; nvim ." Enter
     i3-msg "workspace 1; exec $BROWSER_PATH ~/colegio/facu-1ro/analisis-2/james-stewart-una-variable.pdf"
+    sleep 1
+    i3-msg "workspace 1; exec $BROWSER_PATH https://www.geogebra.org/graphing"
 fi
 
 if [ "$MATERIA" = "discreta" ]; then
@@ -35,9 +37,13 @@ fi
 if [ $MATERIA = "algebra" ]; then
     tmux send-keys -t $SESSION_NAME:1 "z algebra; nvim ." Enter
     i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/tiraboschi.pdf'"
+    sleep 1
     i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/tesauri.pdf'"
+    sleep 1
     i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/kenneth-hoffman.pdf'"
+    sleep 1
     i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/elon-lages-lima.pdf'"
+    sleep 1
     i3-msg "workspace 1; exec --no-startup-id $BROWSER_PATH --new-tab 'file:///home/nico/colegio/facu-1ro/algebra/howard-anton.pdf'"
     sleep 5
 fi
@@ -51,6 +57,9 @@ fi
 
 i3-msg "workspace 2; exec --no-startup-id /usr/bin/obsidian"
 sleep 5
+tmux new-window -t $SESSION_NAME -n "syncthing"
+tmux send-keys -t $SESSION_NAME:2 "syncthing" Enter
+
 tmux attach -t $SESSION_NAME
 
 exit

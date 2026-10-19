@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-i3-msg "workspace 1; $BROWSER"
+i3-msg "workspace 1; exec --no-startup-id $BROWSER"
 
 SESSION_NAME="parser-learning"
 
